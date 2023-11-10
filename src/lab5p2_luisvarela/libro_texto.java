@@ -8,13 +8,15 @@ package lab5p2_luisvarela;
  *
  * @author Luis Andres Varela
  */
-public class libro_texto {
-    private String Curso; 
-    private String Facultad; 
+public class libro_texto extends libro {
 
-    public libro_texto(String Curso, String Facultad) {
-        this.Curso = Curso;
-        this.Facultad = Facultad;
+    private String Curso;
+    private String Facultad;
+
+    public libro_texto(String titulo, String autor, double precio, String Curso, String Facultad) {
+        super(titulo, autor, precio);
+        this.Curso=Curso;
+        this.Facultad=Facultad;
     }
 
     public String getCurso() {
@@ -32,5 +34,5 @@ public class libro_texto {
     public void setFacultad(String Facultad) {
         this.Facultad = Facultad;
     }
-    
+
 }
