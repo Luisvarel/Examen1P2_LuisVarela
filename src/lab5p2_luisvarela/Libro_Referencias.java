@@ -22,5 +22,8 @@ public class Libro_Referencias extends libro{
     public void setTipo(String tipo) {
         this.tipo = tipo;
     }
-    
+    @Override
+    public String toString() {
+        return super.toString()+"\ntipo=" + tipo;
+    }
 }

@@ -54,4 +54,10 @@ public class libro {
         this.edicion = edicion;
     }
 
+    @Override
+    public String toString() {
+        return "titulo:" + titulo + "\nAutor:" + autor + "\nPrecio:" + precio + "\nEdicion=" + edicion;
+    }
+    
+
 }

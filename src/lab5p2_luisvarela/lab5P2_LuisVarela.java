@@ -50,22 +50,22 @@ public class lab5P2_LuisVarela extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel4 = new javax.swing.JPanel();
-        jComboBox4 = new javax.swing.JComboBox<>();
+        cblistar = new javax.swing.JComboBox<>();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        listar = new javax.swing.JTextArea();
         jPanel6 = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
-        jComboBox7 = new javax.swing.JComboBox<>();
-        jComboBox8 = new javax.swing.JComboBox<>();
+        cbetipo = new javax.swing.JComboBox<>();
+        cbelibro = new javax.swing.JComboBox<>();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTextArea3 = new javax.swing.JTextArea();
         jButton6 = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        jComboBox5 = new javax.swing.JComboBox<>();
-        jComboBox6 = new javax.swing.JComboBox<>();
+        cbedtipo = new javax.swing.JComboBox<>();
+        cbedlibro = new javax.swing.JComboBox<>();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTextArea2 = new javax.swing.JTextArea();
         jLabel11 = new javax.swing.JLabel();
@@ -211,16 +211,31 @@ public class lab5P2_LuisVarela extends javax.swing.JFrame {
         jTabbedPane1.setMaximumSize(new java.awt.Dimension(824, 441));
         jTabbedPane1.setMinimumSize(new java.awt.Dimension(824, 441));
         jTabbedPane1.setPreferredSize(new java.awt.Dimension(824, 441));
+        jTabbedPane1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTabbedPane1MouseClicked(evt);
+            }
+        });
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
 
-        jComboBox4.setBackground(new java.awt.Color(153, 153, 153));
-        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Todos", "Libro de texto", "Libro de Referencia ", "Libro de Ficcion", "Libro de No Ficion", " " }));
+        cblistar.setBackground(new java.awt.Color(153, 153, 153));
+        cblistar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Todos", "texto", "Referencia", "Ficcion", "No Ficion", " " }));
+        cblistar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                cblistarMouseClicked(evt);
+            }
+        });
+        cblistar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cblistarActionPerformed(evt);
+            }
+        });
 
-        jTextArea1.setBackground(new java.awt.Color(153, 153, 153));
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        listar.setBackground(new java.awt.Color(153, 153, 153));
+        listar.setColumns(20);
+        listar.setRows(5);
+        jScrollPane1.setViewportView(listar);
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -228,7 +243,7 @@ public class lab5P2_LuisVarela extends javax.swing.JFrame {
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(262, 262, 262)
-                .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(cblistar, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -239,7 +254,7 @@ public class lab5P2_LuisVarela extends javax.swing.JFrame {
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(28, 28, 28)
-                .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(cblistar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 373, Short.MAX_VALUE)
                 .addContainerGap())
@@ -257,11 +272,14 @@ public class lab5P2_LuisVarela extends javax.swing.JFrame {
         jLabel15.setForeground(new java.awt.Color(0, 0, 0));
         jLabel15.setText("Libro:");
 
-        jComboBox7.setBackground(new java.awt.Color(153, 153, 153));
-        jComboBox7.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cbetipo.setBackground(new java.awt.Color(153, 153, 153));
+        cbetipo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbetipoActionPerformed(evt);
+            }
+        });
 
-        jComboBox8.setBackground(new java.awt.Color(153, 153, 153));
-        jComboBox8.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cbelibro.setBackground(new java.awt.Color(153, 153, 153));
 
         jTextArea3.setBackground(new java.awt.Color(153, 153, 153));
         jTextArea3.setColumns(20);
@@ -286,8 +304,8 @@ public class lab5P2_LuisVarela extends javax.swing.JFrame {
                             .addComponent(jLabel15))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jComboBox8, 0, 1, Short.MAX_VALUE)
-                            .addComponent(jComboBox7, 0, 1, Short.MAX_VALUE))))
+                            .addComponent(cbelibro, 0, 1, Short.MAX_VALUE)
+                            .addComponent(cbetipo, 0, 1, Short.MAX_VALUE))))
                 .addGap(92, 92, 92)
                 .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -298,10 +316,10 @@ public class lab5P2_LuisVarela extends javax.swing.JFrame {
                 .addGap(37, 37, 37)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel14)
-                    .addComponent(jComboBox7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cbetipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBox8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cbelibro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel15))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -324,11 +342,9 @@ public class lab5P2_LuisVarela extends javax.swing.JFrame {
         jLabel10.setForeground(new java.awt.Color(0, 0, 0));
         jLabel10.setText("Libro:");
 
-        jComboBox5.setBackground(new java.awt.Color(153, 153, 153));
-        jComboBox5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cbedtipo.setBackground(new java.awt.Color(153, 153, 153));
 
-        jComboBox6.setBackground(new java.awt.Color(153, 153, 153));
-        jComboBox6.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cbedlibro.setBackground(new java.awt.Color(153, 153, 153));
 
         jTextArea2.setBackground(new java.awt.Color(153, 153, 153));
         jTextArea2.setColumns(20);
@@ -385,11 +401,11 @@ public class lab5P2_LuisVarela extends javax.swing.JFrame {
                             .addGroup(jPanel5Layout.createSequentialGroup()
                                 .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jComboBox5, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(cbedtipo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGroup(jPanel5Layout.createSequentialGroup()
                                 .addComponent(jLabel10)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jComboBox6, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                .addComponent(cbedlibro, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 358, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
@@ -419,11 +435,11 @@ public class lab5P2_LuisVarela extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9)
-                    .addComponent(jComboBox5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cbedtipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel10)
-                    .addComponent(jComboBox6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cbedlibro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGap(18, 18, 18)
@@ -990,15 +1006,14 @@ public class lab5P2_LuisVarela extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
 //        if (user.getText().equals("lib123") && password.getText().equals("321lib")) {
-            menu.setVisible(false);
-            administrador.setVisible(true);
-            usuario.setVisible(false);
-            user.setText("");
-            password.setText("");
+        menu.setVisible(false);
+        administrador.setVisible(true);
+        usuario.setVisible(false);
+        user.setText("");
+        password.setText("");
 //        }
         administrador.setVisible(true);
         usuario.setVisible(false);
-        System.out.println((user.getText().equals("lib123") && password.getText().equals("321lib")));
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void agregar_cursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregar_cursoActionPerformed
@@ -1048,22 +1063,163 @@ public class lab5P2_LuisVarela extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        
+
         switch (tipo.getSelectedIndex()) {
-            case 0-> {
-               l.add(new libro_texto(agregar_titulo.getText(),agregar_autor.getText() ,Double.parseDouble(agregar_precio.getText()) , agregar_curso.getText(), agregar_facultad.getText()));
+            case 0 -> {
+                l.add(new libro_texto(agregar_titulo.getText(), agregar_autor.getText(), Double.parseDouble(agregar_precio.getText()), agregar_curso.getText(), agregar_facultad.getText()));
+
+                cbedlibro.addItem(agregar_titulo.getText());
+                cbedtipo.addItem("texto");
+                agregar_titulo.setText("");
+                agregar_autor.setText("");
+                agregar_precio.setText("");
+                agregar_curso.setText("");
+                agregar_facultad.setText("");
             }
-            case 1-> {
-               l.add(new Libro_Referencias(agregar_titulo.getText(),agregar_autor.getText() ,Double.parseDouble(agregar_precio.getText()) , (String)referencia.getSelectedItem()));
+            case 1 -> {
+                l.add(new Libro_Referencias(agregar_titulo.getText(), agregar_autor.getText(), Double.parseDouble(agregar_precio.getText()), (String) referencia.getSelectedItem()));
+                cbedlibro.addItem(agregar_titulo.getText());
+                cbedtipo.addItem("referencias");
+                agregar_titulo.setText("");
+                agregar_autor.setText("");
+                agregar_precio.setText("");
             }
-            case 2-> {
-               l.add(new Libro_Referencias(agregar_titulo.getText(),agregar_autor.getText() ,Double.parseDouble(agregar_precio.getText()) , (String)noficcion.getSelectedItem()));
+            case 2 -> {
+                l.add(new Libro_Referencias(agregar_titulo.getText(), agregar_autor.getText(), Double.parseDouble(agregar_precio.getText()), (String) noficcion.getSelectedItem()));
+                 cbedlibro.addItem(agregar_titulo.getText());
+                cbedtipo.addItem("no ficcion");
+                agregar_titulo.setText("");
+                agregar_autor.setText("");
+                agregar_precio.setText("");
             }
-            case 3-> {
-               l.add(new Libro_Referencias(agregar_titulo.getText(),agregar_autor.getText() ,Double.parseDouble(agregar_precio.getText()) , (String)ficcion.getSelectedItem()));
+            case 3 -> {
+                l.add(new Libro_Referencias(agregar_titulo.getText(), agregar_autor.getText(), Double.parseDouble(agregar_precio.getText()), (String) ficcion.getSelectedItem()));
+                 cbedlibro.addItem(agregar_titulo.getText());
+                cbedtipo.addItem("ficcion");
+                agregar_titulo.setText("");
+                agregar_autor.setText("");
+                agregar_precio.setText("");
             }
         }
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void cblistarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cblistarMouseClicked
+        listar.setText("");
+        if (((String) cblistar.getSelectedItem()).equals("Todos")) {
+            String temp = "";
+            for (libro object : l) {
+                temp += object;
+                temp += "\n";
+            }
+            listar.setText(temp);
+        }
+        if (((String) cblistar.getSelectedItem()).equals("texto")) {
+            String temp = "";
+            for (libro object : l) {
+                if (object instanceof libro_texto) {
+                    temp += object;
+                    temp += "\n";
+
+                }
+            }
+            listar.setText(temp);
+        }
+        if (((String) cblistar.getSelectedItem()).equals("Referencia")) {
+            String temp = "";
+            for (libro object : l) {
+                if (object instanceof Libro_Referencias) {
+                    temp += object;
+                    temp += "\n";
+
+                }
+            }
+            listar.setText(temp);
+        }
+
+        if (((String) cblistar.getSelectedItem()).equals("Ficcion")) {
+            String temp = "";
+            for (libro object : l) {
+                if (object instanceof Libro_Ficción) {
+                    temp += object;
+                    temp += "\n";
+                }
+            }
+            listar.setText(temp);
+        }
+        if (((String) cblistar.getSelectedItem()).equals("No Ficion")) {
+            String temp = "";
+            for (libro object : l) {
+                if (object instanceof LibroNoFicción) {
+                    temp += object;
+                    temp += "\n";
+                }
+            }
+            listar.setText(temp);
+        }
+
+    }//GEN-LAST:event_cblistarMouseClicked
+
+    private void jTabbedPane1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTabbedPane1MouseClicked
+     }//GEN-LAST:event_jTabbedPane1MouseClicked
+
+    private void cblistarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cblistarActionPerformed
+        listar.setText("");
+        if (((String) cblistar.getSelectedItem()).equals("Todos")) {
+            String temp = "";
+            for (libro object : l) {
+                temp += object;
+                temp += "\n";
+            }
+            listar.setText(temp);
+        }
+        if (((String) cblistar.getSelectedItem()).equals("texto")) {
+            String temp = "";
+            for (libro object : l) {
+                if (object instanceof libro_texto) {
+                    temp += object;
+                    temp += "\n";
+
+                }
+            }
+            listar.setText(temp);
+        }
+        if (((String) cblistar.getSelectedItem()).equals("Referencia")) {
+            String temp = "";
+            for (libro object : l) {
+                if (object instanceof Libro_Referencias) {
+                    temp += object;
+                    temp += "\n";
+
+                }
+            }
+            listar.setText(temp);
+        }
+
+        if (((String) cblistar.getSelectedItem()).equals("Ficcion")) {
+            String temp = "";
+            for (libro object : l) {
+                if (object instanceof Libro_Ficción) {
+                    temp += object;
+                    temp += "\n";
+                }
+            }
+            listar.setText(temp);
+        }
+        if (((String) cblistar.getSelectedItem()).equals("Ficion")) {
+            String temp = "";
+            for (libro object : l) {
+                if (object instanceof LibroNoFicción) {
+                    temp += object;
+                    temp += "\n";
+                }
+            }
+            listar.setText(temp);
+        }
+    }//GEN-LAST:event_cblistarActionPerformed
+
+    private void cbetipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbetipoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbetipoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1099,7 +1255,7 @@ public class lab5P2_LuisVarela extends javax.swing.JFrame {
             }
         });
     }
-    private ArrayList<libro>l=new ArrayList();
+    private ArrayList<libro> l = new ArrayList();
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel administrador;
     private javax.swing.JTextField agregar_autor;
@@ -1107,6 +1263,11 @@ public class lab5P2_LuisVarela extends javax.swing.JFrame {
     private javax.swing.JTextField agregar_facultad;
     private javax.swing.JFormattedTextField agregar_precio;
     private javax.swing.JTextField agregar_titulo;
+    private javax.swing.JComboBox<String> cbedlibro;
+    private javax.swing.JComboBox<String> cbedtipo;
+    private javax.swing.JComboBox<String> cbelibro;
+    private javax.swing.JComboBox<String> cbetipo;
+    private javax.swing.JComboBox<String> cblistar;
     private javax.swing.JComboBox<String> ficcion;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
@@ -1120,11 +1281,6 @@ public class lab5P2_LuisVarela extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jComboBox10;
     private javax.swing.JComboBox<String> jComboBox11;
     private javax.swing.JComboBox<String> jComboBox12;
-    private javax.swing.JComboBox<String> jComboBox4;
-    private javax.swing.JComboBox<String> jComboBox5;
-    private javax.swing.JComboBox<String> jComboBox6;
-    private javax.swing.JComboBox<String> jComboBox7;
-    private javax.swing.JComboBox<String> jComboBox8;
     private javax.swing.JComboBox<String> jComboBox9;
     private javax.swing.JFormattedTextField jFormattedTextField2;
     private javax.swing.JLabel jLabel1;
@@ -1174,7 +1330,6 @@ public class lab5P2_LuisVarela extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane3;
-    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextArea jTextArea2;
     private javax.swing.JTextArea jTextArea3;
     private javax.swing.JTextArea jTextArea4;
@@ -1183,6 +1338,7 @@ public class lab5P2_LuisVarela extends javax.swing.JFrame {
     private javax.swing.JTextArea jTextArea7;
     private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField7;
+    private javax.swing.JTextArea listar;
     private javax.swing.JPanel menu;
     private javax.swing.JComboBox<String> noficcion;
     private javax.swing.JTextField password;

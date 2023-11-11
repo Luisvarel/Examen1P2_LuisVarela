@@ -15,8 +15,8 @@ public class libro_texto extends libro {
 
     public libro_texto(String titulo, String autor, double precio, String Curso, String Facultad) {
         super(titulo, autor, precio);
-        this.Curso=Curso;
-        this.Facultad=Facultad;
+        this.Curso = Curso;
+        this.Facultad = Facultad;
     }
 
     public String getCurso() {
@@ -35,4 +35,8 @@ public class libro_texto extends libro {
         this.Facultad = Facultad;
     }
 
+    @Override
+    public String toString() {
+        return super.toString() + "\nCurso" + Curso+"\nFacultad"+Facultad;
+    }
 }
