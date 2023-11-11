@@ -294,6 +294,11 @@ public class lab5P2_LuisVarela extends javax.swing.JFrame {
         jButton6.setBackground(new java.awt.Color(153, 153, 153));
         jButton6.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         jButton6.setText("Eliminar Libro");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -1231,23 +1236,23 @@ public class lab5P2_LuisVarela extends javax.swing.JFrame {
     }//GEN-LAST:event_cblistarActionPerformed
 
     private void cbetipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbetipoActionPerformed
-        String temp="";
+        String temp = "";
         for (libro object : l) {
             if (object.getTitulo().equals(((String) cbelibro.getSelectedItem()))) {
-                if (((String)cbetipo.getSelectedItem()).equals("texto")) {
-                    temp+=object;
+                if (((String) cbetipo.getSelectedItem()).equals("texto")) {
+                    temp += object;
                     texto_eliminar.setText(temp);
                 }
-                if (((String)cbetipo.getSelectedItem()).equals("referencias")) {
-                    temp+=object;
+                if (((String) cbetipo.getSelectedItem()).equals("referencias")) {
+                    temp += object;
                     texto_eliminar.setText(temp);
                 }
-                if (((String)cbetipo.getSelectedItem()).equals("no ficcion")) {
-                    temp+=object;
+                if (((String) cbetipo.getSelectedItem()).equals("no ficcion")) {
+                    temp += object;
                     texto_eliminar.setText(temp);
                 }
-                if (((String)cbetipo.getSelectedItem()).equals("ficcion")) {
-                    temp+=object;
+                if (((String) cbetipo.getSelectedItem()).equals("ficcion")) {
+                    temp += object;
                     texto_eliminar.setText(temp);
                 }
             }
@@ -1255,28 +1260,48 @@ public class lab5P2_LuisVarela extends javax.swing.JFrame {
     }//GEN-LAST:event_cbetipoActionPerformed
 
     private void cbelibroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbelibroActionPerformed
-        String temp="";
+        String temp = "";
         for (libro object : l) {
             if (object.getTitulo().equals(((String) cbelibro.getSelectedItem()))) {
-                if (((String)cbetipo.getSelectedItem()).equals("texto")) {
-                    temp+=object;
+                if (((String) cbetipo.getSelectedItem()).equals("texto")) {
+                    temp += object;
                     texto_eliminar.setText(temp);
                 }
-                if (((String)cbetipo.getSelectedItem()).equals("referencias")) {
-                    temp+=object;
+                if (((String) cbetipo.getSelectedItem()).equals("referencias")) {
+                    temp += object;
                     texto_eliminar.setText(temp);
                 }
-                if (((String)cbetipo.getSelectedItem()).equals("no ficcion")) {
-                    temp+=object;
+                if (((String) cbetipo.getSelectedItem()).equals("no ficcion")) {
+                    temp += object;
                     texto_eliminar.setText(temp);
                 }
-                if (((String)cbetipo.getSelectedItem()).equals("ficcion")) {
-                    temp+=object;
+                if (((String) cbetipo.getSelectedItem()).equals("ficcion")) {
+                    temp += object;
                     texto_eliminar.setText(temp);
                 }
             }
         }
     }//GEN-LAST:event_cbelibroActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        String temp = "";
+        for (libro object : l) {
+            if (object.getTitulo().equals(((String) cbelibro.getSelectedItem()))) {
+                if (((String) cbetipo.getSelectedItem()).equals("texto")) {
+                    l.remove(l.indexOf(object));
+                }
+                if (((String) cbetipo.getSelectedItem()).equals("referencias")) {
+                    l.remove(l.indexOf(object));
+                }
+                if (((String) cbetipo.getSelectedItem()).equals("no ficcion")) {
+                    l.remove(l.indexOf(object));
+                }
+                if (((String) cbetipo.getSelectedItem()).equals("ficcion")) {
+                    l.remove(l.indexOf(object));
+                }
+            }
+        }
+    }//GEN-LAST:event_jButton6ActionPerformed
 
     /**
      * @param args the command line arguments
