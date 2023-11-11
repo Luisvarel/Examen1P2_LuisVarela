@@ -17,6 +17,10 @@ public class lab5P2_LuisVarela extends javax.swing.JFrame {
      */
     public lab5P2_LuisVarela() {
         initComponents();
+        cbedlibro.addItem("nada");
+        cbedtipo.addItem("nada");
+        cbelibro.addItem("nada");
+        cbetipo.addItem("nada");
         administrador.setVisible(false);
         administrador.setAlignmentX(786);
         administrador.setAlignmentY(543);
@@ -1314,41 +1318,57 @@ public class lab5P2_LuisVarela extends javax.swing.JFrame {
                         if (a.equalsIgnoreCase("texto")) {
                             temp += object;
                             texto_eliminar.setText(temp);
-                            cbelibro.
+
+                            cbetipo.setSelectedIndex(0);
+                            cbelibro.setSelectedIndex(0);
+
+                            cbelibro.removeItemAt(l.indexOf(object) + 1);
+                            cbedtipo.removeItemAt(l.indexOf(object) + 1);
+                            cbetipo.removeItemAt(l.indexOf(object) + 1);
+                            cbedlibro.removeItemAt(l.indexOf(object) + 1);
                             l.remove(l.indexOf(object));
-                            cbelibro.remove(l.indexOf(object));
-                            cbedtipo.remove(l.indexOf(object));
-                            cbetipo.remove(l.indexOf(object));
-                            cbedlibro.remove(l.indexOf(object));
+                            break;
                         }
                         if (a.equalsIgnoreCase("referencias")) {
                             temp += object;
                             texto_eliminar.setText(temp);
+                            cbetipo.setSelectedIndex(0);
+
+                            cbelibro.removeItemAt(l.indexOf(object) + 1);
+                            cbedtipo.removeItemAt(l.indexOf(object) + 1);
+                            cbetipo.removeItemAt(l.indexOf(object) + 1);
+                            cbedlibro.removeItemAt(l.indexOf(object) + 1);
                             l.remove(l.indexOf(object));
-                            cbelibro.remove(l.indexOf(object));
-                            cbedtipo.remove(l.indexOf(object));
-                            cbetipo.remove(l.indexOf(object));
-                            cbedlibro.remove(l.indexOf(object));
+                            break;
+
                         }
                         if (a.equalsIgnoreCase("no ficcion")) {
-                           
+
                             temp += object;
                             texto_eliminar.setText(temp);
+                            cbetipo.setSelectedIndex(0);
+
+                            cbelibro.removeItemAt(l.indexOf(object) + 1);
+                            cbedtipo.removeItemAt(l.indexOf(object) + 1);
+                            cbetipo.removeItemAt(l.indexOf(object) + 1);
+                            cbedlibro.removeItemAt(l.indexOf(object) + 1);
                             l.remove(l.indexOf(object));
-                            cbelibro.remove(l.indexOf(object));
-                            cbedtipo.remove(l.indexOf(object));
-                            cbetipo.remove(l.indexOf(object));
-                            cbedlibro.remove(l.indexOf(object));
+                            break;
+
                         }
                         if (a.equalsIgnoreCase("ficcion")) {
-                            
+
                             temp += object;
                             texto_eliminar.setText(temp);
+                            cbetipo.setSelectedIndex(0);
+                            cbelibro.setSelectedIndex(0);
+                            cbelibro.removeItemAt(l.indexOf(object) + 1);
+                            cbedtipo.removeItemAt(l.indexOf(object) + 1);
+                            cbetipo.removeItemAt(l.indexOf(object) + 1);
+                            cbedlibro.removeItemAt(l.indexOf(object) + 1);
                             l.remove(l.indexOf(object));
-                            cbelibro.remove(l.indexOf(object));
-                            cbedtipo.remove(l.indexOf(object));
-                            cbetipo.remove(l.indexOf(object));
-                            cbedlibro.remove(l.indexOf(object));
+                            break;
+
                         }
                     }
                 }
