@@ -59,7 +59,7 @@ public class lab5P2_LuisVarela extends javax.swing.JFrame {
         cbetipo = new javax.swing.JComboBox<>();
         cbelibro = new javax.swing.JComboBox<>();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTextArea3 = new javax.swing.JTextArea();
+        texto_eliminar = new javax.swing.JTextArea();
         jButton6 = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
@@ -280,11 +280,16 @@ public class lab5P2_LuisVarela extends javax.swing.JFrame {
         });
 
         cbelibro.setBackground(new java.awt.Color(153, 153, 153));
+        cbelibro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbelibroActionPerformed(evt);
+            }
+        });
 
-        jTextArea3.setBackground(new java.awt.Color(153, 153, 153));
-        jTextArea3.setColumns(20);
-        jTextArea3.setRows(5);
-        jScrollPane3.setViewportView(jTextArea3);
+        texto_eliminar.setBackground(new java.awt.Color(153, 153, 153));
+        texto_eliminar.setColumns(20);
+        texto_eliminar.setRows(5);
+        jScrollPane3.setViewportView(texto_eliminar);
 
         jButton6.setBackground(new java.awt.Color(153, 153, 153));
         jButton6.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
@@ -1067,9 +1072,10 @@ public class lab5P2_LuisVarela extends javax.swing.JFrame {
         switch (tipo.getSelectedIndex()) {
             case 0 -> {
                 l.add(new libro_texto(agregar_titulo.getText(), agregar_autor.getText(), Double.parseDouble(agregar_precio.getText()), agregar_curso.getText(), agregar_facultad.getText()));
-
                 cbedlibro.addItem(agregar_titulo.getText());
                 cbedtipo.addItem("texto");
+                cbelibro.addItem(agregar_titulo.getText());
+                cbetipo.addItem("texto");
                 agregar_titulo.setText("");
                 agregar_autor.setText("");
                 agregar_precio.setText("");
@@ -1080,21 +1086,28 @@ public class lab5P2_LuisVarela extends javax.swing.JFrame {
                 l.add(new Libro_Referencias(agregar_titulo.getText(), agregar_autor.getText(), Double.parseDouble(agregar_precio.getText()), (String) referencia.getSelectedItem()));
                 cbedlibro.addItem(agregar_titulo.getText());
                 cbedtipo.addItem("referencias");
+                cbelibro.addItem(agregar_titulo.getText());
+                cbetipo.addItem("referencias");
                 agregar_titulo.setText("");
                 agregar_autor.setText("");
                 agregar_precio.setText("");
             }
             case 2 -> {
                 l.add(new Libro_Referencias(agregar_titulo.getText(), agregar_autor.getText(), Double.parseDouble(agregar_precio.getText()), (String) noficcion.getSelectedItem()));
-                 cbedlibro.addItem(agregar_titulo.getText());
+                cbedlibro.addItem(agregar_titulo.getText());
                 cbedtipo.addItem("no ficcion");
+                cbelibro.addItem(agregar_titulo.getText());
+                cbetipo.addItem("no ficcion");
+
                 agregar_titulo.setText("");
                 agregar_autor.setText("");
                 agregar_precio.setText("");
             }
             case 3 -> {
                 l.add(new Libro_Referencias(agregar_titulo.getText(), agregar_autor.getText(), Double.parseDouble(agregar_precio.getText()), (String) ficcion.getSelectedItem()));
-                 cbedlibro.addItem(agregar_titulo.getText());
+                cbedlibro.addItem(agregar_titulo.getText());
+                cbelibro.addItem(agregar_titulo.getText());
+                cbetipo.addItem("ficcion");
                 cbedtipo.addItem("ficcion");
                 agregar_titulo.setText("");
                 agregar_autor.setText("");
@@ -1218,8 +1231,52 @@ public class lab5P2_LuisVarela extends javax.swing.JFrame {
     }//GEN-LAST:event_cblistarActionPerformed
 
     private void cbetipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbetipoActionPerformed
-        // TODO add your handling code here:
+        String temp="";
+        for (libro object : l) {
+            if (object.getTitulo().equals(((String) cbelibro.getSelectedItem()))) {
+                if (((String)cbetipo.getSelectedItem()).equals("texto")) {
+                    temp+=object;
+                    texto_eliminar.setText(temp);
+                }
+                if (((String)cbetipo.getSelectedItem()).equals("referencias")) {
+                    temp+=object;
+                    texto_eliminar.setText(temp);
+                }
+                if (((String)cbetipo.getSelectedItem()).equals("no ficcion")) {
+                    temp+=object;
+                    texto_eliminar.setText(temp);
+                }
+                if (((String)cbetipo.getSelectedItem()).equals("ficcion")) {
+                    temp+=object;
+                    texto_eliminar.setText(temp);
+                }
+            }
+        }
     }//GEN-LAST:event_cbetipoActionPerformed
+
+    private void cbelibroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbelibroActionPerformed
+        String temp="";
+        for (libro object : l) {
+            if (object.getTitulo().equals(((String) cbelibro.getSelectedItem()))) {
+                if (((String)cbetipo.getSelectedItem()).equals("texto")) {
+                    temp+=object;
+                    texto_eliminar.setText(temp);
+                }
+                if (((String)cbetipo.getSelectedItem()).equals("referencias")) {
+                    temp+=object;
+                    texto_eliminar.setText(temp);
+                }
+                if (((String)cbetipo.getSelectedItem()).equals("no ficcion")) {
+                    temp+=object;
+                    texto_eliminar.setText(temp);
+                }
+                if (((String)cbetipo.getSelectedItem()).equals("ficcion")) {
+                    temp+=object;
+                    texto_eliminar.setText(temp);
+                }
+            }
+        }
+    }//GEN-LAST:event_cbelibroActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1331,7 +1388,6 @@ public class lab5P2_LuisVarela extends javax.swing.JFrame {
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane3;
     private javax.swing.JTextArea jTextArea2;
-    private javax.swing.JTextArea jTextArea3;
     private javax.swing.JTextArea jTextArea4;
     private javax.swing.JTextArea jTextArea5;
     private javax.swing.JTextArea jTextArea6;
@@ -1343,6 +1399,7 @@ public class lab5P2_LuisVarela extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> noficcion;
     private javax.swing.JTextField password;
     private javax.swing.JComboBox<String> referencia;
+    private javax.swing.JTextArea texto_eliminar;
     private javax.swing.JTabbedPane tipo;
     private javax.swing.JTextField user;
     private javax.swing.JPanel usuario;
