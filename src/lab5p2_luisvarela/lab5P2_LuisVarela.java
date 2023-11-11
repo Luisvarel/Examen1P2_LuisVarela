@@ -1029,13 +1029,13 @@ public class lab5P2_LuisVarela extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-//        if (user.getText().equals("lib123") && password.getText().equals("321lib")) {
+        if (user.getText().equals("lib123") && password.getText().equals("321lib")) {
         menu.setVisible(false);
         administrador.setVisible(true);
         usuario.setVisible(false);
         user.setText("");
         password.setText("");
-//        }
+        }
         administrador.setVisible(true);
         usuario.setVisible(false);
     }//GEN-LAST:event_jButton2ActionPerformed
@@ -1377,11 +1377,61 @@ public class lab5P2_LuisVarela extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void cbedtipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbedtipoActionPerformed
-
+        if (l.size() != 0) {
+            String a = (((String) cbetipo.getSelectedItem()));
+            String temp = "";
+            if (a != null) {
+                for (libro object : l) {
+                    if (object.getTitulo().equals(((String) cbelibro.getSelectedItem()))) {
+                        if (a.equalsIgnoreCase("texto")) {
+                            temp += object;
+                            texto_eliminar.setText(temp);
+                        }
+                        if (a.equalsIgnoreCase("referencias")) {
+                            temp += object;
+                            texto_eliminar.setText(temp);
+                        }
+                        if (a.equalsIgnoreCase("no ficcion")) {
+                            temp += object;
+                            texto_eliminar.setText(temp);
+                        }
+                        if (a.equalsIgnoreCase("ficcion")) {
+                            temp += object;
+                            texto_eliminar.setText(temp);
+                        }
+                    }
+                }
+            }
+        }
     }//GEN-LAST:event_cbedtipoActionPerformed
 
     private void cbedlibroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbedlibroActionPerformed
-        // TODO add your handling code here:
+        if (l.size() != 0) {
+            String a = (((String) cbetipo.getSelectedItem()));
+            String temp = "";
+            if (a != null) {
+                for (libro object : l) {
+                    if (object.getTitulo().equals(((String) cbelibro.getSelectedItem()))) {
+                        if (a.equalsIgnoreCase("texto")) {
+                            temp += object;
+                            texto_eliminar.setText(temp);
+                        }
+                        if (a.equalsIgnoreCase("referencias")) {
+                            temp += object;
+                            texto_eliminar.setText(temp);
+                        }
+                        if (a.equalsIgnoreCase("no ficcion")) {
+                            temp += object;
+                            texto_eliminar.setText(temp);
+                        }
+                        if (a.equalsIgnoreCase("ficcion")) {
+                            temp += object;
+                            texto_eliminar.setText(temp);
+                        }
+                    }
+                }
+            }
+        }
     }//GEN-LAST:event_cbedlibroActionPerformed
 
     /**
